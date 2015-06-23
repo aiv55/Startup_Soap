@@ -106,7 +106,27 @@
 <section id='buy'>
 	<h2>Get started</h2>
 	<div id="buy-wrapper">
-		<button type="button">$250<br>Let's do this!</button>
+		<button type="button" id="buy-button">$250<br>Let's do this!</button>
+		<script src="https://checkout.stripe.com/checkout.js"></script>
+		<script>
+  			var handler = StripeCheckout.configure({
+    			key: 'pk_live_cmTN0iRE9yLjrPkSPTrtjGjr',
+    			token: function(token) {
+		    	}
+  			});
+			$('#buy-button').on('click', function(e) {
+				handler.open({
+      				name: 'Startup Soap',
+      				description: '1 month of mentorship',
+      				amount: 250,
+      				allowRememberMe: false
+    			});
+    			e.preventDefault();
+  			});
+			$(window).on('popstate', function() {
+				handler.close();
+  			});
+		</script>
 		<table>
 			<tr>
 				<td>
