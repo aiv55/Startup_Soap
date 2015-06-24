@@ -7,14 +7,10 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
-    <script src="https://checkout.stripe.com/checkout.js"></script>
   </head>
   <body>
-    <%= render 'layouts/header' %>
     <div id="body-content">
       <%= yield %>
     </div>
-    <%= render 'layouts/footer' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </body>
 </html>

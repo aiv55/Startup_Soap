@@ -1,5 +1,8 @@
 class ChargesController < ApplicationController
 
+def index
+end
+
 def new
 end
 
@@ -18,7 +21,7 @@ def create
     :description => 'Startup Soap - 1 month of mentorship',
     :currency    => 'usd'
   )
-
+  
 rescue Stripe::CardError => e
   flash[:error] = e.message
   redirect_to charges_path
