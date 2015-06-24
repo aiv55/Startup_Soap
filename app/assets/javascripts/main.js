@@ -1,15 +1,34 @@
 //"How it works" section dropdowns
-
 $('.more').html('more &#9660;');
 $('.more').click(function() {
-	if ($(this).next().css('display') == 'none' ) {
-		$(this).next().slideDown();
+	if ($(this).prev().css('display') == 'none' ) {
+		$(this).prev().slideDown();
 		$(this).html('less &#9650;');
 	} else {
-		$(this).next().slideUp();
+		$(this).prev().slideUp();
 		$(this).html('more &#9660;');
 	}
 });
+
+//Stripe
+var handler = StripeCheckout.configure({
+	key: 'pk_live_cmTN0iRE9yLjrPkSPTrtjGjr',
+	token: function(token) {
+	}
+});
+$('#buy-button').on('click', function(e) {
+	handler.open({
+		name: 'Startup Soap',
+		description: '1 month of mentorship (We are testing this website right now. Do not use this form!)',
+		amount: 250,
+		allowRememberMe: false
+	});
+	e.preventDefault();
+});
+$(window).on('popstate', function() {
+	handler.close();
+});
+
 
 //navigation becomes fixed when you scroll down
 var navElement = $('nav ul');

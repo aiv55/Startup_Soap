@@ -9,15 +9,14 @@
 		</p>
 		<h3>1 Week of Preparation</h3>
 		<p>We will help you break down your business model into it's key elements.</p>
-		<a class="more"></a>
 		<div class="info">
 			<p>
 				Your first step will be to fill out a Google Form by answering questions about your business. We will then use your answers to create a <a href="https://www.ziqquforge.com/">Ziqqu Forge</a> "story". This means that each assertion of your business model will get it's own webpage where you can attach evidence to back it up or comment on it. We will help you get started using Ziqqu Forge, and from there you may add more to your business model to prepare it for your mentor's first review.
 			</p>
 		</div>
+		<a class="more"></a>
 		<h3>4 Weeks of Mentorship</h3>
 		<p>Experienced mentors at Fruition will analyse and critique your business model twice a week.</p>
-		<a class="more"></a>
 		<div class="info">
 			<p>
 				You'll let us know which day's you want to be reviewed, and on those days your assigned mentor will go through your Ziqqu Forge profile and provide feedback. This feedback will always be tailored to point out the strengths and weaknesses your specific startup, but we generally structure our mentorship according the schedule below.
@@ -49,9 +48,9 @@
 				</li>
 			</ul>
 		</div>
+		<a class="more"></a>
 		<h3>Execute with Confidence</h3>
 		<p>Use your refined business model to make stuff happen!</p>
-		<a class="more"></a>
 		<div class="info">
 			<p>
 				After the 4 weeks of mentorship, all feedback and activity will remain on your Ziqqu Forge profile history. You can even use Ziqqu Forge to continue working on your business model and invite feedback from others.
@@ -72,32 +71,35 @@
 				</li>
 			</ul>
 		</div>
+		<a class="more"></a>
 	</div>
 </section>
 
 <section id='who'>
 	<h2>Who we are</h2>
 	<div id="who-wrapper">
-		<%= image_tag("fruition-logo.png", :alt => "Fruition Technology Labs", :id => "fruition") %>
+		<%= link_to('http://www.fruitiontechlabs.com/', :target => '_blank') do %>
+			<%= image_tag("fruition-logo.png", :alt => "Fruition Technology Labs", :id => "fruition") %>
+		<% end %>
 		<p>
 			Get regular feedback from mentors at Fruition Technology Labs, a cutting-edge business incubator located in Texas.
 		</p>
 		<a href="http://www.fruitiontechlabs.com/" target="_blank"><div class="visit">visit website</div></a>
-		<table>
-			<tr>
-				<td>
-					<%= image_tag("sean_guillory.jpg", :alt => "Sean Guillory", :id => "sean") %>
-				</td>
-				<td>
-					<h4>
-						"Wes is currently my business mentor for a neuroscience service business that I'm starting up. Since day one, he has helped me improve my business acumen while nurturing the knowledge and excitement that I have in getting this work to help a lot of people. Wes has been a mentor in the truest sense of the word and he just has this ineffable quality to make one want to continually work harder. I give Wes my highest recommendation and thank him and Fruition Technology Labs for believing in my mission." 
-					</h4>
-					<h5>-Sean Guillory</h5>
-				</td>
-			</tr>
-		</table>
+		<div class="clearfix">
+			<div class="quote-pic">
+				<%= image_tag("sean_guillory.jpg", :alt => "Sean Guillory", :id => "sean") %>
+			</div>
+			<div class="quote-text">
+				<h4>
+					"Wes has been a mentor in the truest sense of the word and he just has this ineffable quality to make one want to continually work harder. I give Wes my highest recommendation and thank him and Fruition Technology Labs for believing in my mission." 
+				</h4>
+				<h5>-Sean Guillory</h5>
+			</div>
+		</div>
 		<div id="line"></div>
-		<%= image_tag("ziqqu-logo.png", :alt => "Ziqqu Forge", :id => "ziqqu") %>
+		<%= link_to('https://www.ziqquforge.com/', :target => '_blank') do %>
+			<%= image_tag("ziqqu-logo.png", :alt => "Ziqqu Forge", :id => "ziqqu") %>
+		<% end %>
 		<p>
 			Ziqqu Forge makes it easy to collaborate on business models online. It gives entrepreneurs a space where they can outline the key assertions of their business model and mentors can provide direct feedback.
 		</p>
@@ -109,40 +111,20 @@
 <section id='buy'>
 	<h2>Get started</h2>
 	<div id="buy-wrapper">
-		<button type="button" id="buy-button">$250<br>Let's do this!</button>
-		<script src="https://checkout.stripe.com/checkout.js"></script>
-		<script>
-  			var handler = StripeCheckout.configure({
-    			key: 'pk_live_cmTN0iRE9yLjrPkSPTrtjGjr',
-    			token: function(token) {
-		    	}
-  			});
-			$('#buy-button').on('click', function(e) {
-				handler.open({
-      				name: 'Startup Soap',
-      				description: '1 month of mentorship (We are testing this website right now. Do not use this form!)',
-      				amount: 250,
-      				allowRememberMe: false
-    			});
-    			e.preventDefault();
-  			});
-			$(window).on('popstate', function() {
-				handler.close();
-  			});
-		</script>
-		<table>
-			<tr>
-				<td>
-					<%= image_tag("elon-musk.jpg", :alt => "A picture of Elon Musk smiling with the Telsa Motors logo behind him.", :id => "elon") %>
-				</td>
-				<td>
-					<h4>
-						"Constantly seek criticism. A well thought out critique of whatever you're doing is as valuable as gold." 
-					</h4>
-					<h5>-Elon Musk</h5>
-				</td>
-			</tr>
-		</table>
+		<%= form_tag charges_path do %>
+			<button type="button" id="buy-button">$250<br>Let's do this!</button>
+		<% end %>
+		<div class="clearfix">
+			<div class="quote-pic">
+				<%= image_tag("elon-musk.jpg", :alt => "A picture of Elon Musk smiling with the Telsa Motors logo behind him.", :id => "elon") %>
+			</div>
+			<div class="quote-text">
+				<h4>
+					"Constantly seek criticism. A well thought out critique of whatever you're doing is as valuable as gold." 
+				</h4>
+				<h5>-Elon Musk</h5>
+			</div>
+		</div>
 	</div>
 </section>
 <section id='faq'>
@@ -176,7 +158,7 @@
 				<li>
 					<h3>What if I want a phone call or additional help?</h3>
 					<p>
-						Fruition also offers other mentorship services such as phone consultation. They even have an intense 3 month startup coaching program based on their <em>5 Simple Steps to the Fruition Process ™</em>.
+						Fruition also offers other mentorship services such as phone consultation. They even have an intense 3 month startup coaching program based on their <em><a href="http://fruitiontechlabs.com/fruition-technology-labs-process.html">5 Simple Steps to the Fruition Process ™</a></em>.
 					</p>
 				</li>
 			</ul>

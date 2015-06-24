@@ -32,12 +32,6 @@ $footer-dark-color        : rgba(140,140,155,0.6);
 $texture-light            : "light_noise_diagonal.png";
 $texture-dark             : "light_noise_diagonal.png";//"noisy_net.png";
 
-//-------------------------------------------------
-//    Media Query Breaks
-//-------------------------------------------------
-
-$first-break              : 383;
-
 //*************************************************
 //  Mixins
 //*************************************************
@@ -189,6 +183,13 @@ footer {
   padding: 15px;
 }
 
+.clearfix:after { 
+   content: " ";
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+
 //-------------------------------------------------
 //    How it works
 //-------------------------------------------------
@@ -227,6 +228,10 @@ footer {
 #sean {
   border-radius: 20px;
   width: 150px;
+  display: block;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto
 }
 
 #who-wrapper img {
@@ -256,6 +261,8 @@ footer {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 3px;
+  box-shadow: 1px 4px 11px #e2e2e2;
 }
 
 //-------------------------------------------------
@@ -285,17 +292,21 @@ button:hover {
 #elon {
   border-radius: 20px;
   width: 150px;
+  display: block;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto
 }
 
 td {
   padding: 10px;
 }
 
-td h4 {
+.quote-text h4 {
   color: #b2b2b9;
 }
 
-td h5 {
+.quote-text h5 {
   color: #b2b2b9;
   font-style: italic;
 }
@@ -332,4 +343,19 @@ footer {
           text-decoration: underline;
         }
     }
+}
+
+//*************************************************
+//  Media Queries
+//*************************************************
+
+@media screen and (min-width: 575px) {
+  .quote-pic {
+    width: 30%;
+    float: left;
+  }
+  .quote-text {
+    width: 65%;
+    float: right;
+  }
 }
