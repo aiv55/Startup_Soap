@@ -12,7 +12,7 @@ $('.more').click(function() {
 
 //Stripe
 var handler = StripeCheckout.configure({
-	key: 'pk_test_It2pqHuqdyhivX9fdUzV4xQz',
+	key: 'pk_live_cmTN0iRE9yLjrPkSPTrtjGjr',
 	token: function(token, args) {
     	document.getElementById("stripeToken").value = token.id;                              
         document.getElementById("stripeEmail").value = token.email;
