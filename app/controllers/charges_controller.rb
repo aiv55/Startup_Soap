@@ -8,18 +8,19 @@ end
 
 def create
   # Amount in cents
-  @amount = 250
+  @amount = 100
 
   customer = Stripe::Customer.create(
-    :email => 'example@stripe.com',
+    :email => params[:stripeEmail],
     :card  => params[:stripeToken]
   )
 
   charge = Stripe::Charge.create(
-    :customer    => customer.id,
-    :amount      => @amount,
-    :description => 'Startup Soap - 1 month of mentorship',
-    :currency    => 'usd'
+    :customer       => customer.id,
+    :amount         => @amount,
+    :description    => 'Startup Soap - 1 month of mentorship',
+    :currency       => 'usd',
+    :receipt_email  => params[:stripeEmail]
   )
   
 rescue Stripe::CardError => e
