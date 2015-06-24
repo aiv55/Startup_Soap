@@ -13,8 +13,11 @@ $('.more').click(function() {
 //Stripe
 var handler = StripeCheckout.configure({
 	key: 'pk_live_cmTN0iRE9yLjrPkSPTrtjGjr',
-	token: function(token) {
-	}
+	token: function(token, args) {
+    	document.getElementById("stripeToken").value = token.id;                              
+        document.getElementById("stripeEmail").value = token.email;
+        document.getElementById("chargeForm").submit();
+    }
 });
 $('#buy-button').on('click', function(e) {
 	handler.open({

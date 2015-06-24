@@ -111,7 +111,9 @@
 <section id='buy'>
 	<h2>Get started</h2>
 	<div id="buy-wrapper">
-		<%= form_tag charges_path do %>
+		<%= form_tag charges_path, id: 'chargeForm' do %>
+			= hidden_field_tag 'stripeToken'
+			= hidden_field_tag 'stripeEmail'
 			<button type="button" id="buy-button">$250<br>Let's do this!</button>
 		<% end %>
 		<div class="clearfix">
