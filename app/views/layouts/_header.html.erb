@@ -1,13 +1,31 @@
 <header>
-	<div id='logo-wrapper'>
-		<%= image_tag("logo.svg", :alt => "Logo for Startup Soap", :id => "logo") %>
-	</div>
-	<h1>Clean up your business model with a month of mentorship.</h1>
 	<nav>
+	<%= link_to root_path do%>
+		<%=  image_tag("logo.svg", :alt => "Logo for Startup Soap", :id => "logo") %>
+	<% end %>
+	<a href="#" id="menu-button"></a>
 		<ul>
-    		<a id="nav-link-how" href="#how"><li>How it works</li
-    		></a><a id="nav-link-who" href="#who"><li>Who we are</li
-    		></a><a id="nav-link-buy" href="#buy"><li>Get started</li></a>
+			<li>
+				<%= link_to root_path, :id => "program" do %>
+					Program
+				<% end %>
+			</li
+    		><li>
+    			<%= link_to mentorship_path, :id => "mentorship" do %>
+					Mentorship
+				<% end %>
+    		</li
+    		><li>
+    			<%= link_to faq_path, :id => "faq" do %>
+					FAQ
+				<% end %>
+    		</li
+    		><li>
+    			<%= link_to get_started_path, :id => "getStarted" do %>
+					Get Started
+				<% end %>
+    		</li>
     	</ul>
 	</nav>
+	<h1>Clean up your business model with a month of mentorship.</h1>
 </header>
