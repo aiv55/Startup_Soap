@@ -55,7 +55,7 @@ h4 {
 
 
 h1 {
-  margin: 100px 3%;
+  margin: 0 3% 20px;
   padding: 10px 0;
   font-size: 1.6em;
   color: $base-link-hover-color;
@@ -101,8 +101,9 @@ a {
 
 #logo {
   display: block;
-  margin: 0 auto;
-  width: 100px;
+  margin: 60px auto 30px;
+  width: 20%;
+  min-width: 200px;
   float: none;
 }
 
@@ -110,17 +111,23 @@ a {
 //    Navigation Menu
 //-------------------------------------------------
 
-.box-shadow-menu {
+#menu {
   position: relative;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+.box-shadow-menu {
   padding-left: 1.25em;
   margin-top: 15px;
   margin-right: 5px;
+  border: none;
 }
 .box-shadow-menu:before {
   content: "";
   position: absolute;
-  left: 0;
-  top: 0.25em;
+  left: 0.25em;
+  top: 0.75em;
   width: 1em;
   height: 0.15em;
   background: black;
@@ -130,14 +137,16 @@ a {
 }
 
 nav {
-  height: 76px;
-  padding: 10px;
   display: block;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 nav ul {
   margin: 0;
-  background-color: #e6ebee;
+  background-color: rgba(250,250,255,0.95);//#e6ebee;
   box-shadow: inset 0px 12px 10px -15px $base-link-color;
   border-radius: 0 0 20px 20px;
   display: block;
@@ -392,26 +401,12 @@ footer {
   .quote-text {
     float: right;
   }
-  nav {
-    margin: 10px auto;
-    width: 80%;
-    max-width: 55em;
-  }
-  #logo {
-    margin: 0;
-    float: left;
-  }
-  nav ul {
-    float: right;
-    padding-top: 15px;
-  }
 }
 
 @media screen and (min-width: 350px) {
   nav ul {
     margin: 0 auto;
     padding-left: 0;
-    background-color: white;
     box-shadow: none;
     text-align: center;
   }

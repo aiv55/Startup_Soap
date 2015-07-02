@@ -1,30 +1,35 @@
 <header>
-	<nav>
 	<%= link_to root_path do%>
 		<%=  image_tag("logo.svg", :alt => "Logo for Startup Soap", :id => "logo") %>
 	<% end %>
-	<a href="#" id="menu-button"></a>
+	<h1>
+		Clean up your business model with a month of mentorship.
+	</h1>
+	<nav>
+		<div id="menu">
+			<a href="#" id="menu-button"></a>
+		</div>
 		<ul>
 			<li>
 				<%= link_to root_path, :id => "program" do %>
-					Program
+					Home
 				<% end %>
 			</li
-    		><li>
-    			<%= link_to mentorship_path, :id => "mentorship" do %>
+   			><li>
+   				<%= link_to mentorship_path, :id => "mentorship" do %>
 					Mentorship
 				<% end %>
-    		</li
-    		><li>
-    			<%= link_to faq_path, :id => "faq" do %>
+   			</li
+   			><li>
+   				<%= link_to faq_path, :id => "faq" do %>
 					FAQ
 				<% end %>
-    		</li
-    		><li>
-    			<%= link_to get_started_path, :id => "getStarted" do %>
+   			</li
+   			><li>
+   				<%= link_to get_started_path, :id => "getStarted" do %>
 					Get Started
 				<% end %>
-    		</li>
-    	</ul>
+   			</li>
+   		</ul>
 	</nav>
 </header>
