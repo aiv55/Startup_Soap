@@ -132,7 +132,7 @@ a {
 nav {
   height: 76px;
   padding: 10px;
-  margin-bottom: 90px;
+  display: block;
 }
 
 nav ul {
@@ -203,13 +203,6 @@ footer {
   padding: 15px;
 }
 
-.clearfix:after { 
-   content: " ";
-   display: block; 
-   height: 0; 
-   clear: both;
-}
-
 //-------------------------------------------------
 //    How it works
 //-------------------------------------------------
@@ -226,13 +219,34 @@ footer {
   display: none;
 }
 
-.content,
-#who-wrapper,
-#buy-wrapper,
-#faq-wrapper,
-#footer-wrapper {
-  max-width: 800px;
+.content {
+  max-width: 50em;
   margin: 0 auto;
+}
+
+#faq-links {
+  list-style-type: none;
+  padding:0;
+  margin:0 auto;
+  max-width: 38em;
+}
+
+#faq-links li {
+  padding-left: 1em; 
+  text-indent: -.7em;
+}
+
+#faq-links p {
+  display: inline;
+  font-weight: normal;
+  font-size: 1.15em;
+  text-align: left;
+}
+
+#faq-questions {
+  list-style-type: none;
+  margin:0;
+  padding:0;
 }
 
 //-------------------------------------------------
@@ -242,19 +256,6 @@ footer {
 #fruition,
 #ziqqu {
   width: 200px
-}
-
-#sean {
-  border-radius: 20px;
-  width: 150px;
-  display: block;
-  margin-top: 30px;
-  margin-left: auto;
-  margin-right: auto
-}
-
-#who-wrapper img {
-  margin-top: 20px;
 }
 
 .visit {
@@ -290,23 +291,35 @@ button {
   padding: 15px;
   color: #FFF;
   background-color: #4bc970;
-  font-size: 18px;
+  font-size: 20px;
   text-align: center;
   font-style: normal;
   border-radius: 15px;
-  width: 60%;
-  min-width: 200px;
+  width: 200px;
   border: 1px solid #3ac162;
   border-width: 1px 1px 3px;
   box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
-  margin: 10px 20%;
+  display: block;
+  margin: 10px auto;
 }
 
 button:hover {
   background-color: #6ed38c;
 }
 
-#elon {
+.quote {
+  margin: 10px auto;
+  max-width: 600px;
+}
+
+.quote:after { 
+   content: " ";
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+
+.quote-pic img {
   border-radius: 20px;
   width: 150px;
   display: block;
@@ -317,6 +330,11 @@ button:hover {
 
 td {
   padding: 10px;
+}
+
+.quote-text {
+  padding-top: 10px;
+  max-width: 430px;
 }
 
 .quote-text h4 {
@@ -336,7 +354,7 @@ td {
 footer {
   width: 100%;
   height: 150px;
-  box-shadow: inset 0px 13px 15px -15px $base-link-color;
+  box-shadow: inset 0px 13px 15px -15px $base-link-hover-color;
   @include textured-radial-gradient($texture-dark, $footer-light-color, $footer-dark-color);
     & ul {
       margin: 0;
@@ -366,47 +384,18 @@ footer {
 //*************************************************
 //  Media Queries
 //*************************************************
-
-@media screen and (min-width: 87200px) {
-  nav ul {
-  margin: 5px 0;
-  padding: 5px;
-  float: right;
-  background-color: white;
-  display: block;
-  vertical-align: middle;
-  text-align: center;
-  z-index: 9999;
-    & a {
-      font-family: $heading-font-stack;
-      font-weight: 700;
-      font-size: 14px;
-      text-decoration: none;
-    }
-    & li {
-      list-style: none;
-      white-space: nowrap;
-      width: 100px;
-      padding: 5px;
-      margin: 0 auto;
-      vertical-align: middle;
-      display: inline-block;
-      text-align: center;
-    }
-}
-  }
   
 @media screen and (min-width: 650px) {
   .quote-pic {
-    width: 30%;
     float: left;
   }
   .quote-text {
-    width: 65%;
     float: right;
   }
   nav {
-    margin: 10px 10%;
+    margin: 10px auto;
+    width: 80%;
+    max-width: 55em;
   }
   #logo {
     margin: 0;

@@ -46,7 +46,7 @@ $('#buy-button').on('click', function(e) {
 	handler.open({
 		name: 'Startup Soap',
 		description: '1 month of mentorship.',
-		amount: 25000,
+		amount: 7000,
 		allowRememberMe: false
 	});
 	e.preventDefault();
