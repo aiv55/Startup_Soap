@@ -1,0 +1,22 @@
+<h1>Let's build a strong business model!</h1>
+<section id='buy'>
+	<h2>Get started</h2>
+	<div id="buy-wrapper">
+		<%= form_tag charges_path, id: 'chargeForm' do %>
+			<%= hidden_field_tag 'stripeToken' %>
+			<%= hidden_field_tag 'stripeEmail' %>
+			<button type="button" id="buy-button">$250<br>Let's do this!</button>
+		<% end %>
+		<div class="clearfix">
+			<div class="quote-pic">
+				<%= image_tag("elon-musk.jpg", :alt => "A picture of Elon Musk smiling with the Telsa Motors logo behind him.", :id => "elon") %>
+			</div>
+			<div class="quote-text">
+				<h4>
+					"Constantly seek criticism. A well thought out critique of whatever you're doing is as valuable as gold." 
+				</h4>
+				<h5>-Elon Musk</h5>
+			</div>
+		</div>
+	</div>
+</section>

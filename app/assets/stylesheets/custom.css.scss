@@ -14,9 +14,9 @@ $heading-font-stack       : 'Varela Round', Arial, serif;//sans-serif;
 //-------------------------------------------------
 
 $base-text-color          : #3A3D41;
-$heading-text-color       : #5A5D60;
+$heading-text-color       : #697d89;//#5A5D60;
 
-$base-link-color          : #4f7389;
+$base-link-color          : #1581c3;
 $base-link-hover-color    : #849DAC;
 
 $background-light-color   : rgba(240,240,255,0.9);
@@ -48,7 +48,8 @@ $texture-dark             : "light_noise_diagonal.png";//"noisy_net.png";
 //*************************************************
 
 h1,
-h2 {
+h2,
+h4 {
   text-align: center;
 }
 
@@ -61,7 +62,8 @@ h1 {
 }
 
 h2,
-h3 {
+h3,
+h4 {
   font-family: $heading-font-stack;
   color: $heading-text-color;
 }
@@ -212,9 +214,8 @@ footer {
 //    How it works
 //-------------------------------------------------
 
-#how,
-#buy {
-  box-shadow: inset 0px 12px 10px -15px $base-link-color;
+.dark-section {
+  box-shadow: inset 0px  12px 10px -15px #35a2fb, inset 0px -12px 10px -15px #35a2fb;
   @include textured-radial-gradient($texture-light, $background-light-color, $background-dark-color);
 }
 
@@ -225,7 +226,7 @@ footer {
   display: none;
 }
 
-#how-wrapper,
+.content,
 #who-wrapper,
 #buy-wrapper,
 #faq-wrapper,
@@ -264,22 +265,19 @@ footer {
   width: 120px;
 }
 
-#line {
+.line {
   width: 80%;
-  height: 3px;
-  border-radius: 2px;
-  background-color: #d8d8dc;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 30px;
+  height: 5px;
+  border-radius: 5px;
+  background-color: #ededef;
+  margin: 40px auto;
 }
 
 #comments {
   display: block;
   max-width: 500px;
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 20px auto;
   border-radius: 3px;
   box-shadow: 1px 4px 11px #e2e2e2;
 }
@@ -323,6 +321,7 @@ td {
 
 .quote-text h4 {
   color: #b2b2b9;
+  text-align: left;
 }
 
 .quote-text h5 {
@@ -337,7 +336,7 @@ td {
 footer {
   width: 100%;
   height: 150px;
-  box-shadow: inset 0px 12px 10px -15px $base-link-color;
+  box-shadow: inset 0px 13px 15px -15px $base-link-color;
   @include textured-radial-gradient($texture-dark, $footer-light-color, $footer-dark-color);
     & ul {
       margin: 0;
